@@ -24,4 +24,4 @@ samples, guidance on mobile development, and a full API reference.
 <img height="460px" width="600px" src="https://mir-s3-cdn-cf.behance.net/project_modules/fs/fc8d3b68748807.5b685514e9184.png">
 
 - Code App
-<img height="680px" width="330px" src="images/screen_app.png">
+<img height="680px" width="330px" src="images/app.png">
