@@ -73,7 +73,7 @@ class _HomePageState extends State<HomePage> {
                   Text(
                     ' Bonjour Mouhamadou',
                     style: TextStyle(
-                        fontWeight: FontWeight.bold, fontSize: width * 0.05),
+                        fontWeight: FontWeight.w400, fontSize: width * 0.05),
                   ),
                   SizedBox(
                     height: height * 0.02,
@@ -132,7 +132,8 @@ class _HomePageState extends State<HomePage> {
                                         style: TextStyle(
                                             color: Colors.white,
                                             fontSize: width * 0.057,
-                                            fontWeight: FontWeight.w300),
+                                            fontWeight: FontWeight.w300,
+                                            letterSpacing: width * 0.0193),
                                       ),
                                       SizedBox(
                                         height: height * 0.01,
