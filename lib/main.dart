@@ -17,6 +17,7 @@ class _AppState extends State<App> {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
+      color: Colors.white,
       title: 'Design PostCash',
       home: HomePage(),
     );
@@ -74,6 +75,7 @@ class _HomePageState extends State<HomePage> {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
+        backgroundColor: Colors.white,
         appBar: AppBar(
             elevation: 0,
             backgroundColor: Colors.white,
@@ -187,7 +189,7 @@ class _HomePageState extends State<HomePage> {
                                 child: Container(
                                   height: height * 0.17,
                                   width: 100,
-                                  color: Colors.white,
+                                  color: Colors.red,
                                   child: Column(
                                     mainAxisAlignment: MainAxisAlignment.center,
                                     children: <Widget>[
@@ -205,136 +207,15 @@ class _HomePageState extends State<HomePage> {
                               SizedBox(
                                 width: 10,
                               ),
-                              Container(
-                                height: height * 0.17,
-                                width: 100,
-                                color: Color(0XFF110a5c),
-                                child: Column(
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceEvenly,
-                                  children: <Widget>[
-                                    SizedBox(
-                                      height: 1,
-                                    ),
-                                    Container(
-                                      height: height * 0.07,
-                                      width: height * 0.07,
-                                      child: Container(
-                                        width: 10,
-                                        child: CircleAvatar(
-                                          radius: 50,
-                                          backgroundColor: Colors.red,
-                                          backgroundImage:
-                                              NetworkImage(item1.img),
-                                        ),
-                                        decoration: new BoxDecoration(
-                                          shape: BoxShape.circle,
-                                          border: new Border.all(
-                                            color: Colors.red,
-                                            width: 2.0,
-                                          ),
-                                        ),
-                                      ),
-                                    ),
-                                    Text(item1.first_name,
-                                        style: TextStyle(color: Colors.white)),
-                                    Text(item1.last_name,
-                                        style: TextStyle(color: Colors.white)),
-                                    SizedBox(
-                                      height: 1,
-                                    ),
-                                  ],
-                                ),
-                              ),
+                              CardContact(height: height, item: item1),
                               SizedBox(
                                 width: 10,
                               ),
-                              Container(
-                                height: height * 0.17,
-                                width: 100,
-                                color: Color(0XFF110a5c),
-                                child: Column(
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceEvenly,
-                                  children: <Widget>[
-                                    SizedBox(
-                                      height: 1,
-                                    ),
-                                    Container(
-                                        height: height * 0.07,
-                                        width: height * 0.07,
-                                        child: Container(
-                                          width: 10,
-                                          child: CircleAvatar(
-                                            radius: 50,
-                                            backgroundImage:
-                                                NetworkImage(item2.img),
-                                          ),
-                                          decoration: new BoxDecoration(
-                                            shape: BoxShape.circle,
-                                            border: new Border.all(
-                                              color: Colors.red,
-                                              width: 2.0,
-                                            ),
-                                          ),
-                                        )),
-                                    Text(item2.first_name,
-                                        style: TextStyle(color: Colors.white)),
-                                    Text(item2.last_name,
-                                        style: TextStyle(color: Colors.white)),
-                                    SizedBox(
-                                      height: 1,
-                                    ),
-                                  ],
-                                ),
-                              ),
+                              CardContact(height: height, item: item2),
                               SizedBox(
                                 width: 10,
                               ),
-                              Container(
-                                height: height * 0.17,
-                                width: 100,
-                                color: Color(0XFF110a5c),
-                                child: Column(
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceEvenly,
-                                  children: <Widget>[
-                                    SizedBox(
-                                      height: 1,
-                                    ),
-                                    Container(
-                                        height: height * 0.07,
-                                        width: height * 0.07,
-                                        child: Container(
-                                            height: height * 0.07,
-                                            width: height * 0.07,
-                                            child: Container(
-                                              width: 10,
-                                              child: CircleAvatar(
-                                                radius: 50,
-                                                backgroundImage:
-                                                    NetworkImage(item3.img),
-                                              ),
-                                              decoration: new BoxDecoration(
-                                                shape: BoxShape.circle,
-                                                border: new Border.all(
-                                                  color: Colors.red,
-                                                  width: 2.0,
-                                                ),
-                                              ),
-                                            ))),
-                                    Text(
-                                      item3.first_name,
-                                      style: TextStyle(color: Colors.white),
-                                    ),
-                                    Text(item3.last_name,
-                                        style: TextStyle(color: Colors.white)),
-                                    SizedBox(
-                                      height: 1,
-                                    ),
-                                  ],
-                                ),
-                              ),
+                              CardContact(height: height, item: item3),
                             ])),
                         Padding(
                           padding: EdgeInsets.fromLTRB(width * 0.02, 0, 0, 0),
@@ -476,6 +357,58 @@ class _HomePageState extends State<HomePage> {
             ),
           ),
         ),
+      ),
+    );
+  }
+}
+
+class CardContact extends StatelessWidget {
+  const CardContact({
+    Key key,
+    @required this.height,
+    @required this.item,
+  }) : super(key: key);
+
+  final double height;
+  final Items item;
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      height: height * 0.17,
+      width: 100,
+      color: Color(0XFF110a5c),
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        children: <Widget>[
+          SizedBox(
+            height: 1,
+          ),
+          Container(
+            height: height * 0.07,
+            width: height * 0.07,
+            child: Container(
+              width: 10,
+              child: CircleAvatar(
+                radius: 50,
+                backgroundColor: Colors.red,
+                backgroundImage: NetworkImage(item.img),
+              ),
+              decoration: new BoxDecoration(
+                shape: BoxShape.circle,
+                border: new Border.all(
+                  color: Colors.red,
+                  width: 2.0,
+                ),
+              ),
+            ),
+          ),
+          Text(item.first_name, style: TextStyle(color: Colors.white)),
+          Text(item.last_name, style: TextStyle(color: Colors.white)),
+          SizedBox(
+            height: 1,
+          ),
+        ],
       ),
     );
   }
