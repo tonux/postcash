@@ -20,8 +20,9 @@ For help getting started with Flutter, view our
 samples, guidance on mobile development, and a full API reference.
 # postcash
 
-Design App
-<img height="630px" width="500px" src="https://mir-s3-cdn-cf.behance.net/project_modules/fs/fc8d3b68748807.5b685514e9184.png">
+- Design App
+<img height="420px" width="500px" src="https://mir-s3-cdn-cf.behance.net/project_modules/fs/fc8d3b68748807.5b685514e9184.png">
 
-Code App
+- Code App
 <img height="630px" width="330px" src="images/screen.png">
+<img height="630px" width="330px" src="images/screen2.png">
